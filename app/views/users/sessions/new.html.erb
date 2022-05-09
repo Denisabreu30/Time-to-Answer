@@ -1,0 +1,36 @@
+ <div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Login de Usúario</h3></div>
+                            <div class="card-body">
+                                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                                    <div class="form-floating mb-3">
+                                       <%= f.email_field :email, autofocus: true, placeholder:"name@example.com", class:"form-control"  %>
+                                       <label for="inputEmail">Email address</label>    
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <%= f.password_field :password, placeholder:"Password", class:"form-control" %>
+                                        <label for="inputPassword">Password</label>
+                                    </div>
+
+                                    <% if devise_mapping.rememberable? %>
+                                      <%= f.check_box :remember_me %> Lembrar-me
+                                    <% end %>
+
+                                    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                     <%= f.submit "Log in", class:"btn btn-primary" %>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

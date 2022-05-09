@@ -1,0 +1,20 @@
+{
+  "name": "time_to_answer",
+  "private": true,
+  "dependencies": {
+    "@popperjs/core": "^2.10.2",
+    "bootstrap": "^5.1.3",
+    "bootstrap-growl-ifightcrime": "^1.1.0",
+    "fastclick": "1.0.6",
+    "font-awesome": "4.6.3",
+    "fontawesome-free": "^1.0.1",
+    "jquery": "^3.6.0",
+    "jquery-easing": "^0.0.1",
+    "malihu-custom-scrollbar-plugin": "3.1.3",
+    "nprogress": "0.2.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Denis abreu30 <denis3.0abreu@gmail.com>",
+  "license": "MIT"
+}

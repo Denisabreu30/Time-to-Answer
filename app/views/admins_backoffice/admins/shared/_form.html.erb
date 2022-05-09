@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <br><br>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><%= action_message %></a>
+      </div>
+    </nav>
+
+    <% if @admin.errors.any? %>
+        <div class="alert  alert-danger alert-dismissible">
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          <ul>
+            <% @admin.errors.full_messages.each do |message| %>
+              <li> <%= message %> </li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    
+
+    <%= form_with(model: [ :admins_backoffice, @admin ], local: true) do |form| %>
+
+      <div class="mb-3 mt-3">
+        <%= form.label :email %>
+        <%= form.text_field :email, class:"form-control", placeholder: t('placeholder.admin_email' ) %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :password %>
+        <%= form.password_field :password, class:"form-control", placeholder: t('placeholder.admin_password') %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, class:"form-control", placeholder: t('placeholder.admin_password_confirmation') %>
+      </div>
+      <button type="submit" class="btn btn-primary"><%= t('button.admin.btn_save') %></button>
+    <% end %>
+  </head>
+</html>
